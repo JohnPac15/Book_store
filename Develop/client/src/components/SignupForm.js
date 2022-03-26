@@ -46,11 +46,11 @@ const SignupForm = () => {
       console.error(e);
     }
 
-    // setUserFormData({
-    //   username: '',
-    //   email: '',
-    //   password: '',
-    // });
+    setUserFormData({
+      username: '',
+      email: '',
+      password: '',
+    });
   };
 
   return (

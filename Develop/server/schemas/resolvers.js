@@ -6,9 +6,11 @@ const resolvers = {
   Query: {
     me: async (parent, args, context) => {
       if (context.user) {
-        const userData = await User.findOne({});
+        const userData = await User.findOne({ _id: context.user._id })
+        return userData
       }
-    },
+
+  },
     users: async (parent, args) => {
       return User.find();
     },
@@ -36,10 +38,18 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    // saveBook: async (parent, args) => {
-    //   const User = await 
-    // }
-  },
+    saveBook: async (parent, { bookId }, context) => {
+      if(context.user){
+        const updateUser = await User.findByIdAndUpdate(
+          {_id: context.user._id},
+          { $addToSet: { savedBooks: bookId } },
+          { new: true }
+        )
+        return updateUser
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    }
+  }
 };
 
 module.exports = resolvers;
