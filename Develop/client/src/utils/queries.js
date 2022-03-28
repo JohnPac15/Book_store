@@ -11,4 +11,22 @@ export const QUERY_All = gql `
       }
     }
   }
-  `
+  `;
+
+  export const QUERY_ME = gql`
+  query Me {
+    me {
+      _id
+      username
+      email
+      savedBooks {
+        bookId
+        authors
+        description
+        image
+        link
+        title
+      }
+    }
+  }
+`;
