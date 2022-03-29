@@ -4,7 +4,13 @@ const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
-    me: async (parent, args) => {
+    me: async (parent, args, context) => {
+      if (context.user) {
+        const userData = await User.findOne({ _id: context.user._id });
+        return userData;
+      }
+    },
+    users: async (parent, args) => {
       return User.find();
     },
   },
@@ -15,19 +21,53 @@ const resolvers = {
 
       return { token, user };
     },
+    login: async (parent, { email, password }) => {
+      const user = await User.findOne({ email });
+
+      if (!user) {
+        throw new AuthenticationError("Incrrect Credentials");
+      }
+
+      const correctPw = await user.isCorrectPassword(password);
+
+      if (!correctPw) {
+        throw new AuthenticationError("Incrrect Credentials");
+      }
+
+      const token = signToken(user);
+      return { token, user };
+    },
+    saveBook: async (
+      parent,
+      { bookId, authors, description, image, link, title },
+      context
+    ) => {
+      if (context.user) {
+        const updateUser = await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          {
+            $push: {
+              savedBooks: { bookId, authors, description, image, link, title },
+            },
+          },
+          { new: true }
+        );
+        return updateUser;
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
+    removeBook: async (parent, { bookId }, context) => {
+      if (context.user) {
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { savedBooks: { bookId: bookId } } },
+          { new: true }
+        );
+        return updatedUser
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
   },
 };
 
 module.exports = resolvers;
-
-//   async getSingleUser({ user = null, params }, res) {
-//     const foundUser = await User.findOne({
-//       $or: [{ _id: user ? user._id : params.id }, { username: params.username }],
-//     });
-
-//     if (!foundUser) {
-//       return res.status(400).json({ message: 'Cannot find a user with this id!' });
-//     }
-
-//     res.json(foundUser);
-//   },
