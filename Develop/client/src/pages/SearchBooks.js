@@ -79,17 +79,6 @@ const SearchBooks = () => {
         console.error(err);
       }
     }
-      // try {
-      //   await addBook({
-      //     variables: { id: bookToSave.bookId },
-      //   });
-
-
-      // if (!response.ok) {
-      //   throw new Error('something went wrong!');
-      // }
-
-      // if book successfully saves to user's account, save book id to state
   };
 
   return (
