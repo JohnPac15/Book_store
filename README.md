@@ -1,13 +1,13 @@
 # Book_Store
  ## Description 
- TDB
+ Bookstore is a simple API app using grav Q well and Apollo client server. This app uses the Google books API to pull any book that you search in the search bar. You can login and create a user and save books to your saved books file.
  ## Table of Contents
  * [Installation](#installation)
  * [Usage](#usage)
  * [Credits](#credits)
  * [Screenshots](#Screenshots)
  ## Installation
-clone repo, then from the root dir, run "npm install. After all packages have been installed from the same command line run "npm run develop". The server should start with no issues 
+clone repo, then from the root directory, run "npm install. After all packages have been installed from the same command line run "npm run develop". The server should start with no issues 
  ## Usage 
  Any time you wish to keep track of books you want to read, or have already read.
  ## Credits 
