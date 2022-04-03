@@ -5,7 +5,7 @@
  * [Installation](#installation)
  * [Usage](#usage)
  * [Credits](#credits)
- * [License](#license)
+ * [Screenshots](#Screenshots)
  ## Installation
 clone repo, then from the root dir, run "npm install. After all packages have been installed from the same command line run "npm run develop". The server should start with no issues 
  ## Usage 
@@ -60,14 +60,20 @@ clone repo, then from the root dir, run "npm install. After all packages have be
  **Consequence**: A temporary ban from any sort of interaction or public communication with the community for a specified period of time. No public or private interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, is allowed during this period. Violating these terms may lead to a permanent ban.
  ### 4. Permanent Ban
  **Community Impact**: Demonstrating a pattern of violation of community standards, including sustained inappropriate behavior, harassment of an individual, or aggression toward or disparagement of classes of individuals.
- ## Testing 
-None
+ ## Screenshots
+ <img width="1349" alt="Screen Shot 2022-04-02 at 11 01 52 PM" src="https://user-images.githubusercontent.com/88564390/161410927-c33fd726-cf56-4904-ac9d-a4119398c7dd.png">
+<img width="1349" alt="Screen Shot 2022-04-02 at 11 01 46 PM" src="https://user-images.githubusercontent.com/88564390/161410929-887f0baf-b9f0-4dfa-a132-f9f2a06b9bf0.png">
+<img width="1349" alt="Screen Shot 2022-04-02 at 11 00 44 PM" src="https://user-images.githubusercontent.com/88564390/161410932-920f6d11-276f-4866-975e-49e9b66abdfb.png">
+<img width="1349" alt="Screen Shot 2022-04-02 at 11 01 00 PM" src="https://user-images.githubusercontent.com/88564390/161410936-ac854871-0283-40b3-834e-18c1384a01d3.png">
+<img width="1349" alt="Screen Shot 2022-04-02 at 11 01 16 PM" src="https://user-images.githubusercontent.com/88564390/161410938-f4d990b0-0aed-4e4f-a419-34b36442334d.png">
+<img width="1349" alt="Screen Shot 2022-04-02 at 11 02 06 PM" src="https://user-images.githubusercontent.com/88564390/161410944-7ac91581-5d99-4844-8e54-82593abd3d22.png">
+
  ## Questions 
 
  Made by John Pacini
 
-https://serene-eyrie-85122.herokuapp.com
+Deployed app - https://serene-eyrie-85122.herokuapp.com
 
-https://github.com/Johnpac15
+Repo - https://github.com/Johnpac15
 
-Johnpac15@yahoo.com
+My Email - Johnpac15@yahoo.com
